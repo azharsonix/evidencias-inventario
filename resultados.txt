@@ -1,0 +1,41 @@
+Api (Tests\Api)
+ [x] API: /salud responde estado ok
+ [x] API: la raíz responde HTML aunque la interfaz no esté instalada
+ [x] API: lista productos ordenados por código y filtra por texto y categoría
+ [x] API: crea, consulta, modifica y elimina un producto
+ [x] API: entradas y salidas actualizan la existencia y quedan en el historial
+ [x] API: categorías únicas ordenadas y reporte con fecha de generación
+ [x] API: responde 404, 409, 405 y 400 con mensaje de error
+ [x] API: valida tipos y reglas de negocio con 422 sin modificar los datos
+
+Integracion (Tests\Integracion)
+ [x] CP-15 Entradas y salidas hechas por la API se conservan al volver a abrir el archivo de datos
+
+Movimientos (Tests\Movimientos)
+ [x] CP-07 Entrada de producto con cantidad válida incrementa la existencia
+ [x] CP-08 Salida de producto con cantidad disponible reduce la existencia
+ [x] CP-10 Salida mayor a la existencia muestra error y no cambia la existencia
+ [x] CP-13 Entrada con cantidad cero muestra error de validación
+
+Producto (Tests\Producto)
+ [x] CP-01 Registrar producto con datos válidos
+ [x] CP-02 Registrar producto con código duplicado muestra error
+ [x] CP-03 Consultar producto con código existente
+ [x] CP-04 Consultar producto con código inexistente muestra mensaje
+ [x] CP-05 Modificar producto con datos válidos
+ [x] CP-06 Eliminar producto existente
+ [x] CP-09 Registrar producto con precio negativo muestra error de validación
+ [x] CP-11 Consultar existencias de todos los productos
+ [x] CP-14 Consultar producto ignora mayúsculas y espacios en el código
+ [x] CP-18 Modificar producto con precio negativo o código inexistente muestra error y no cambia los datos
+
+Reporte (Tests\Reporte)
+ [x] CP-12 Generar reporte básico de inventario después de entradas y salidas
+ [x] CP-16 Flujo completo: registrar, entrada, salida, reporte y eliminar
+ [x] CP-17 El reporte lista los productos por resurtir y omite los que tienen stock suficiente
+
+Repositorio Inventario (Tests\RepositorioInventario)
+ [x] Persistencia: si el archivo no existe crea la carpeta y siembra datos de ejemplo
+ [x] Persistencia: guardar y cargar conserva productos, movimientos y fechas
+ [x] Persistencia: actualizar guarda los cambios y no guarda nada si la operación falla
+

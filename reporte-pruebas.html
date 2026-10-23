@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporte de ejecución de pruebas</title>
+<style>
+  :root { --p:#3949AB; --pd:#283593; --pl:#E8EAF6; --t:#212121; --t2:#424242; --t3:#757575; --ln:#E0E0E0; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#F5F5F5; color:var(--t); font:14px/1.45 "Segoe UI", Roboto, Arial, sans-serif; }
+  header { background:var(--p); color:#fff; padding:28px 16px 24px; text-align:center; }
+  header h1 { margin:0; font-size:22px; letter-spacing:.5px; text-transform:uppercase; }
+  header p { margin:6px 0 0; color:var(--pl); }
+  main { max-width:1180px; margin:0 auto; padding:20px 16px 40px; }
+  .meta { color:var(--t3); font-size:12px; text-align:center; margin-bottom:18px; }
+  .resumen { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:18px; }
+  .card { background:#fff; border:1px solid var(--ln); border-top:3px solid var(--p); border-radius:6px; padding:14px 16px; }
+  .card .k { color:var(--t2); font-size:12px; font-weight:600; }
+  .card .v { font-size:28px; font-weight:700; color:var(--p); }
+  .card.ok { border-top-color:#2E7D32 } .card.ok .v { color:#2E7D32 }
+  .card.mal { border-top-color:#C62828 } .card.mal .v { color:#C62828 }
+  .card.pend { border-top-color:#EF6C00 } .card.pend .v { color:#EF6C00 }
+  .avance { display:flex; align-items:center; gap:18px; background:#fff; border:1px solid var(--ln); border-radius:6px; padding:16px; margin-bottom:22px; }
+  .dona { width:84px; height:84px; border-radius:50%; flex:none; display:grid; place-items:center;
+          background:conic-gradient(#2E7D32 360deg, #E0E0E0 0); }
+  .dona span { width:62px; height:62px; border-radius:50%; background:#fff; display:grid; place-items:center; font-weight:700; color:var(--pd); }
+  h2 { font-size:14px; text-transform:uppercase; text-align:center; color:var(--pd); border-bottom:2px solid var(--p); padding-bottom:6px; margin:26px 0 10px; }
+  .tabla { overflow-x:auto; background:#fff; border:2px solid var(--pd); border-radius:4px; }
+  table { border-collapse:collapse; width:100%; min-width:760px; }
+  th { background:var(--pl); color:var(--pd); font-size:11px; text-transform:uppercase; text-align:center; padding:9px 8px; border:1px solid #9E9E9E; border-bottom:2px solid var(--pd); }
+  td { padding:8px; border:1px solid #BDBDBD; vertical-align:middle; }
+  td.c { text-align:center; white-space:nowrap; }
+  td.id { font-weight:700; color:var(--p); text-align:center; white-space:nowrap; }
+  td.mono { font-family:Consolas, monospace; font-size:12px; color:var(--t2); }
+  .chip { display:inline-block; padding:2px 10px; border-radius:12px; font-size:12px; font-weight:700; }
+  .chip.ok { background:#E8F5E9; color:#2E7D32 } .chip.mal { background:#FFEBEE; color:#C62828 } .chip.pend { background:#FFF8E1; color:#EF6C00 }
+  .detalle { margin-top:4px; font:12px Consolas, monospace; color:#C62828; white-space:pre-wrap; }
+  footer { color:var(--t3); font-size:12px; text-align:center; margin-top:24px; }
+  @media print { body { background:#fff } .card, .avance { break-inside:avoid } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Reporte de ejecución de pruebas</h1>
+  <p>Sistema de Control de Inventario para una Tienda de Cómputo</p>
+</header>
+<main>
+  <div class="meta">Fecha de ejecución: 17/10/2026 19:49  |  PHP 8.2.12  |  PHPUnit 11.5.56  |  Windows NT 10.0  |  Ejecutó: Chuina Guadalupe García Campos (Analista y Tester)</div>
+
+  <section class="resumen">
+    <div class="card"><div class="k">Casos de prueba</div><div class="v">18</div></div>
+    <div class="card ok"><div class="k">Aprobados</div><div class="v">18</div></div>
+    <div class="card mal"><div class="k">No aprobados</div><div class="v">0</div></div>
+    <div class="card pend"><div class="k">Pendientes</div><div class="v">0</div></div>
+    <div class="card"><div class="k">Aserciones verificadas</div><div class="v">129</div></div>
+  </section>
+
+  <section class="avance">
+    <div class="dona"><span>100%</span></div>
+    <div><strong>Porcentaje de aprobación</strong><br>Todos los casos de prueba fueron aprobados. El sistema cumple con los requisitos probados.<br>
+      <small style="color:var(--t3)">Tiempo total de ejecución: 36.0 ms</small></div>
+  </section>
+
+  <h2>Casos de prueba de la matriz de trazabilidad</h2>
+  <div class="tabla"><table>
+    <thead><tr><th>ID caso</th><th>Requisito</th><th>Descripción</th><th>Tipo</th><th>Prueba automatizada</th><th>Aserciones</th><th>Tiempo</th><th>Estado</th></tr></thead>
+    <tbody><tr><td class="id">CP-01</td><td class="c">RF-01</td><td>Registrar producto con datos válidos</td><td class="c">Sistema</td><td class="mono">ProductoTest::testRegistrarProductoConDatosValidos</td><td class="c">2</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-02</td><td class="c">RF-01</td><td>Registrar producto con código duplicado muestra error</td><td class="c">Error</td><td class="mono">ProductoTest::testRegistrarProductoConCodigoDuplicado</td><td class="c">2</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-03</td><td class="c">RF-02</td><td>Consultar producto con código existente</td><td class="c">Unitaria</td><td class="mono">ProductoTest::testConsultarProductoExistente</td><td class="c">2</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-04</td><td class="c">RF-02</td><td>Consultar producto con código inexistente muestra mensaje</td><td class="c">Error</td><td class="mono">ProductoTest::testConsultarProductoInexistente</td><td class="c">2</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-05</td><td class="c">RF-03</td><td>Modificar producto con datos válidos</td><td class="c">Integración</td><td class="mono">ProductoTest::testModificarProductoConDatosValidos</td><td class="c">2</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-06</td><td class="c">RF-04</td><td>Eliminar producto existente</td><td class="c">Sistema</td><td class="mono">ProductoTest::testEliminarProductoExistente</td><td class="c">2</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-07</td><td class="c">RF-06</td><td>Entrada de producto con cantidad válida incrementa la existencia</td><td class="c">Unitaria</td><td class="mono">MovimientosTest::testEntradaIncrementaExistencia</td><td class="c">2</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-08</td><td class="c">RF-07</td><td>Salida de producto con cantidad disponible reduce la existencia</td><td class="c">Aceptación</td><td class="mono">MovimientosTest::testSalidaReduceExistencia</td><td class="c">2</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-09</td><td class="c">RF-01</td><td>Registrar producto con precio negativo muestra error de validación</td><td class="c">Error</td><td class="mono">ProductoTest::testRegistrarProductoConPrecioNegativo</td><td class="c">2</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-10</td><td class="c">RF-07</td><td>Salida mayor a la existencia muestra error y no cambia la existencia</td><td class="c">Error</td><td class="mono">MovimientosTest::testSalidaMayorALaExistencia</td><td class="c">3</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-11</td><td class="c">RF-05</td><td>Consultar existencias de todos los productos</td><td class="c">Aceptación</td><td class="mono">ProductoTest::testConsultarExistencias</td><td class="c">1</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-12</td><td class="c">RF-08</td><td>Generar reporte básico de inventario después de entradas y salidas</td><td class="c">Integración</td><td class="mono">ReporteTest::testGenerarReporteBasico</td><td class="c">4</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-13</td><td class="c">RF-06</td><td>Entrada con cantidad cero muestra error de validación</td><td class="c">Unitaria</td><td class="mono">MovimientosTest::testEntradaConCantidadInvalida</td><td class="c">2</td><td class="c">0.9 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-14</td><td class="c">RF-02</td><td>Consultar producto ignora mayúsculas y espacios en el código</td><td class="c">Unitaria</td><td class="mono">ProductoTest::testConsultarProductoIgnoraMayusculasYEspacios</td><td class="c">3</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-15</td><td class="c">RF-06</td><td>Entradas y salidas hechas por la API se conservan al volver a abrir el archivo de datos</td><td class="c">Integración</td><td class="mono">IntegracionTest::testMovimientosSePersisten</td><td class="c">5</td><td class="c">1.3 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-16</td><td class="c">RF-08</td><td>Flujo completo: registrar, entrada, salida, reporte y eliminar</td><td class="c">Sistema</td><td class="mono">ReporteTest::testFlujoCompleto</td><td class="c">4</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-17</td><td class="c">RF-08</td><td>El reporte lista los productos por resurtir y omite los que tienen stock suficiente</td><td class="c">Aceptación</td><td class="mono">ReporteTest::testProductosPorResurtir</td><td class="c">1</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td class="id">CP-18</td><td class="c">RF-03</td><td>Modificar producto con precio negativo o código inexistente muestra error y no cambia los datos</td><td class="c">Error</td><td class="mono">ProductoTest::testModificarProductoConDatosInvalidos</td><td class="c">5</td><td class="c">0.1 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr></tbody>
+  </table></div>
+
+  <h2>Pruebas adicionales (API y persistencia): 11 de 11 aprobadas</h2>
+  <div class="tabla"><table>
+    <thead><tr><th>Descripción</th><th>Prueba automatizada</th><th>Aserciones</th><th>Tiempo</th><th>Estado</th></tr></thead>
+    <tbody><tr><td>API: /salud responde estado ok</td><td class="mono">ApiTest::testSalud</td><td class="c">2</td><td class="c">9.4 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td>API: la raíz responde HTML aunque la interfaz no esté instalada</td><td class="mono">ApiTest::testRaizHtml</td><td class="c">3</td><td class="c">3.7 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td>API: lista productos ordenados por código y filtra por texto y categoría</td><td class="mono">ApiTest::testListarYFiltrar</td><td class="c">5</td><td class="c">2.7 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td>API: crea, consulta, modifica y elimina un producto</td><td class="mono">ApiTest::testCrud</td><td class="c">9</td><td class="c">2.3 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td>API: entradas y salidas actualizan la existencia y quedan en el historial</td><td class="mono">ApiTest::testMovimientos</td><td class="c">9</td><td class="c">2.4 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td>API: categorías únicas ordenadas y reporte con fecha de generación</td><td class="mono">ApiTest::testCategoriasYReporte</td><td class="c">5</td><td class="c">2.6 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td>API: responde 404, 409, 405 y 400 con mensaje de error</td><td class="mono">ApiTest::testErroresDeRutaYConflicto</td><td class="c">8</td><td class="c">1.6 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td>API: valida tipos y reglas de negocio con 422 sin modificar los datos</td><td class="mono">ApiTest::testValidaciones</td><td class="c">17</td><td class="c">1.2 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td>Persistencia: si el archivo no existe crea la carpeta y siembra datos de ejemplo</td><td class="mono">RepositorioInventarioTest::testSiembraInicial</td><td class="c">18</td><td class="c">3.7 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td>Persistencia: guardar y cargar conserva productos, movimientos y fechas</td><td class="mono">RepositorioInventarioTest::testGuardarYCargar</td><td class="c">5</td><td class="c">1.4 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr><tr><td>Persistencia: actualizar guarda los cambios y no guarda nada si la operación falla</td><td class="mono">RepositorioInventarioTest::testActualizar</td><td class="c">2</td><td class="c">1.4 ms</td><td class="c"><span class="chip ok">Aprobada</span></td></tr></tbody>
+  </table></div>
+
+  <footer>Generado automáticamente con <code>composer evidencia</code> a partir de los resultados de PHPUnit (evidencias/junit.xml).</footer>
+</main>
+</body>
+</html>
